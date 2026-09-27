@@ -189,7 +189,7 @@ a { color: var(--ink); }
   width: 100%;
   height: clamp(480px, 70vh, 740px);
   object-fit: cover;
-  object-position: 12% center;
+  object-position: 42% center;
   border-radius: 20px;
   box-shadow: 0 40px 70px -50px rgba(20, 20, 20, 0.8);
 }
@@ -236,7 +236,7 @@ a { color: var(--ink); }
 
 .band--top img { object-position: center 8%; }
 
-.band--center img { object-position: center 40%; }
+.band--center img { object-position: center 72%; }
 
 /* ---------- cards ---------- */
 
@@ -326,6 +326,19 @@ a { color: var(--ink); }
 }
 
 /* ---------- quote ---------- */
+
+.quote-inner { display: flex; align-items: center; gap: clamp(20px, 3vw, 36px); }
+
+.quote-photo {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 auto;
+  border: 3px solid var(--signal);
+}
+
+.quote-body { max-width: 62ch; }
 
 .quote-line {
   font-family: var(--headline);
@@ -419,13 +432,13 @@ a { color: var(--ink); }
 
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-figure img { height: clamp(280px, 58vw, 440px); }
+  .hero-figure img { height: clamp(280px, 58vw, 440px); object-position: 30% center; }
   .cards { grid-template-columns: 1fr; }
   .about-inner { grid-template-columns: 1fr; }
   .about-photo { max-width: 420px; }
   .band img { height: clamp(220px, 52vw, 360px); }
   .band--top img { object-position: center top; }
-  .band--center img { object-position: center 38%; }
+  .band--center img { object-position: center 72%; }
 }
 
 @media (max-width: 640px) {
@@ -437,4 +450,9 @@ a { color: var(--ink); }
   .header-inner { gap: 12px; }
   .steps li { grid-template-columns: 44px 1fr; gap: 14px; }
   .footer-inner { flex-direction: column; }
+}
+
+@media (max-width: 560px) {
+  .quote-inner { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .quote-photo { width: 104px; height: 104px; }
 }
